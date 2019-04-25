@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Grid from '@material-ui/core/Grid';
+import SearchAppBar from './components/AppBar.js';
+import PhotoCard from './components/PhotoCard.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render () {
+    return (
+      <div className="App">
+        <SearchAppBar />
+        <div className="App-Grid">
+          <Grid container style={{ padding: '2rem' }} spacing={16}>
+            <Grid item xs={12} sm={12} md={4}>
+              <PhotoCard />
+            </Grid>
+            <Grid item xs={12} sm={12} md={4}>
+              <PhotoCard />
+            </Grid>
+            <Grid item xs={12} sm={12} md={4}>
+              <PhotoCard />
+            </Grid>
+          </Grid>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
