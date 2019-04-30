@@ -1,24 +1,26 @@
 import React from 'react';
+import Grid from '@material-ui/core/Grid';
 import Input from '@material-ui/core/Input';
 
 class Form extends React.Component {
   render () {
     return (
-      <form onSubmit={this.props.getWeather}>
-        <Input
-          placeholder="City"
-          type="text"
-          name="city"
-        />
-        <Input
-          placeholder="Country"
-          type="text"
-          name="country"
-        />
-        <button className="form-btn">
-          Send it!
-        </button>
-      </form>
+      <Grid container className="weather-form-container">
+        <Grid item xs={12}>
+          <form className="weather-form" onSubmit={this.props.getWeather}>
+            <h1>City weather search</h1>
+            <Input
+              className="weather-form-input"
+              placeholder="Search city"
+              type="text"
+              name="city"
+            />
+            <button className="weather-form-btn">
+              Send it!
+            </button>
+          </form>
+        </Grid>
+      </Grid>
     );
   }
 }

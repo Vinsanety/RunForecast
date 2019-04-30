@@ -1,15 +1,76 @@
 .App {
-
+  background-color: #FAFAFA;
+  min-height: 100vh;
+}
+@media only screen and (min-width: 768px) {
+  .app-grid {
+    padding: 0 10rem;
+  }
+}
+h1 {
+  color: #2196F3;
 }
 
-.form-btn {
-  min-width: 150px;
+.api-docs-link {
+  color: #FFEB3B;
+  margin-right: 1rem;
+  transition: all 1.5s ease-in-out;
+}
+.api-docs-link:hover {
+  transform: rotate(360deg) scale(1.5);
+}
+.home-link {
+  text-decoration: none;
+  color: #FFF;
+}
+
+/* FORM */
+.weather-form {
+  margin: 1rem 0 2rem 0;
+}
+.weather-form-container {
+  text-align: center;
+}
+.weather-form .weather-form-input {
+  width: 50%;
+  margin-right: 1rem;
+  color: #424242;
+}
+.weather-form .MuiInput-underline-222:after {
+  border-bottom: 2px solid #2196F3;
+}
+.weather-form-btn {
+  min-width: 100px;
   max-width: 300px;
-  height: 50px;
-  background-color: blue;
+  height: 35px;
+  background-color: #2196F3;
   border: none;
   border-radius: 3px;
   font-variant: small-caps;
   font-size: 1.25rem;
   color: #FFF;
+  cursor: pointer;
+}
+.weather-form-btn:hover, .weather-form-btn:active {
+  transition: 0.15s;
+  color: #2196F3;
+  background-color: #FFF;
+  border: 1px solid #2196F3;
+}
+
+/* CARD */
+.weather-card {
+  padding: 1rem;
+  min-height: 25vh;
+}
+.weather-card span {
+  color: #2196F3;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.weather-card-error {
+  font-size: 1.75rem;
+  /* letter-spacing: 2px; */
+  color: #F44336;
+  text-align: center;
 }
