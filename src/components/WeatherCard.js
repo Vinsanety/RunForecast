@@ -19,7 +19,7 @@ class WeatherCard extends React.Component {
           }
           { this.props.description &&
             <p>
-              <span>Description:</span> { this.props.description }
+              <span>Conditions:</span> { this.props.description }
             </p>
           }
           { this.props.error &&
