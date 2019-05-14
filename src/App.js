@@ -3,6 +3,7 @@ import './App.css';
 import Grid from '@material-ui/core/Grid';
 import SearchAppBar from './components/AppBar.js';
 import GetWeatherContainer from './components/GetWeatherContainer.js';
+import Footer from './components/Footer.js';
 
 class App extends React.Component {
   render () {
@@ -16,6 +17,7 @@ class App extends React.Component {
             </Grid>
           </Grid>
         </div>
+        <Footer />
       </div>
     );
   }
