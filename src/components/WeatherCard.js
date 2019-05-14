@@ -17,6 +17,11 @@ class WeatherCard extends React.Component {
               <span>Temperature:</span> { this.props.temperature }&deg;F
             </p>
           }
+          { this.props.humidity &&
+            <p>
+              <span>Humidity:</span> { this.props.humidity }%
+            </p>
+          }
           { this.props.description &&
             <p>
               <span>Conditions:</span> { this.props.description }

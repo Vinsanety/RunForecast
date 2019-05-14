@@ -19,15 +19,17 @@ class GetWeatherContainer extends React.Component {
     console.log(data);
     if (data.name) {
       this.setState({
-        temperature: data.main.temp,
         city: data.name,
+        temperature: data.main.temp,
+        humidity: data.main.humidity,
         description: data.weather[0].description,
         error: "",
       });
     } else {
       this.setState({
-        temperature: undefined,
         city: undefined,
+        temperature: undefined,
+        humidity: undefined,
         description: undefined,
         error: "Please enter a City",
       });
@@ -39,8 +41,9 @@ class GetWeatherContainer extends React.Component {
       <Fragment>
         <Form getWeather={this.getWeather}/>
         <WeatherCard
-          temperature={this.state.temperature}
           city={this.state.city}
+          temperature={this.state.temperature}
+          humidity={this.state.humidity}
           description={this.state.description}
           error={this.state.error}
         />
