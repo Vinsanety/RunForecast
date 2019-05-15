@@ -24,6 +24,8 @@ class GetWeatherContainer extends React.Component {
         humidity: data.main.humidity,
         description: data.weather[0].description,
         icon: data.weather[0].icon,
+        windSpeed: data.wind.speed,
+        cloud: data.clouds.all,
         error: "",
       });
     } else {
@@ -47,6 +49,8 @@ class GetWeatherContainer extends React.Component {
           humidity={this.state.humidity}
           description={this.state.description}
           icon={this.state.icon}
+          windSpeed={this.state.windSpeed}
+          cloud={this.state.cloud}
           error={this.state.error}
         />
       </Fragment>
