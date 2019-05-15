@@ -27,6 +27,13 @@ class WeatherCard extends React.Component {
               <span>Conditions:</span> { this.props.description }
             </p>
           }
+          { this.props.icon &&
+            <p>
+              <span>Weather Icon:</span>
+                <img src={"http://openweathermap.org/img/w/" + this.props.icon + ".png"} alt="Weather icon">
+                </img>
+            </p>
+          }
           { this.props.error &&
             <p className="weather-card-error">
               { this.props.error }
