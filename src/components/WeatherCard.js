@@ -16,7 +16,7 @@ class WeatherCard extends React.Component {
             <p>
               <span className="weather-category">Temperature:</span> { this.props.temperature }<span className="measurement-unit">&deg;F</span>
               { this.props.icon &&
-                  <img className="weather-icon" src={"http://openweathermap.org/img/w/" + this.props.icon + ".png"} alt="Weather icon">
+                  <img className="weather-icon" src={"https://openweathermap.org/img/w/" + this.props.icon + ".png"} alt="Weather icon">
                   </img>
               }
             </p>
