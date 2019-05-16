@@ -30,6 +30,7 @@ h1 {
 .local-weather-ticker {
   padding: 1rem;
   width: calc(100% - 2rem);
+  border-radius: 0 !important;
 }
 .local-weather-ticker-header {
   color: #2196F3;
@@ -160,7 +161,7 @@ h1 {
 @media only screen and (max-width: 768px) {
   .footer-container, .footer-copyright, .footer-link {
     width: 100%;
-    padding: 0.5rem 0;
+    padding: 0.25rem 0;
     text-align: center;
   }
   .footer-container {

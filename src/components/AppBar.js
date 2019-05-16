@@ -14,7 +14,7 @@ const styles = theme => ({
     width: '100%',
   },
   backgroundColor: {
-    backgroundColor: 'blue',
+    backgroundColor: '#2196F3',
   },
   grow: {
     flexGrow: 1,
