@@ -1,17 +1,21 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import WeatherCard from './WeatherCard.js';
 import Form from './Form.js';
 
 const API_KEY = "56e336360da929bb96ec1b44103e92aa";
 
-class GetWeatherContainer extends React.Component {
+class CitySearchWeatherContainer extends React.Component {
   state = {
-    temperature: undefined,
     city: undefined,
+    temperature: undefined,
+    icon: undefined,
+    humidity: undefined,
     description: undefined,
+    windSpeed: undefined,
+    cloud: undefined,
     error: undefined,
   }
-  getWeather = async (e) => {
+  getCityWeather = async (e) => {
     e.preventDefault();
     const city = e.target.elements.city.value;
     const api_call = await fetch(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=imperial`);
@@ -21,9 +25,9 @@ class GetWeatherContainer extends React.Component {
       this.setState({
         city: data.name,
         temperature: data.main.temp,
+        icon: data.weather[0].icon,
         humidity: data.main.humidity,
         description: data.weather[0].description,
-        icon: data.weather[0].icon,
         windSpeed: data.wind.speed,
         cloud: data.clouds.all,
         error: "",
@@ -32,8 +36,11 @@ class GetWeatherContainer extends React.Component {
       this.setState({
         city: undefined,
         temperature: undefined,
+        icon: undefined,
         humidity: undefined,
         description: undefined,
+        windSpeed: undefined,
+        cloud: undefined,
         error: "Please enter a City",
       });
     };
@@ -42,7 +49,7 @@ class GetWeatherContainer extends React.Component {
   render () {
     return (
       <Fragment>
-        <Form getWeather={this.getWeather}/>
+        <Form getCityWeather={this.getCityWeather}/>
         <WeatherCard
           city={this.state.city}
           temperature={this.state.temperature}
@@ -58,4 +65,4 @@ class GetWeatherContainer extends React.Component {
   }
 }
 
-export default GetWeatherContainer;
+export default CitySearchWeatherContainer;

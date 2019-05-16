@@ -8,7 +8,7 @@ class Footer extends React.Component {
           <span>&copy;2019 Vahala Designs</span>
         </div>
         <div className="footer-link">
-          <a href="https://vincevahala.com" target="_blank" rel="noopener noreferrer">Vahala Designs</a>
+          <a href="https://vincevahala.com" target="_blank" rel="noopener noreferrer">Vahala Web Design</a>
         </div>
       </footer>
     )

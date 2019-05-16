@@ -26,6 +26,31 @@ h1 {
   color: #FFF;
 }
 
+/* PAPER / Local Weather */
+.local-weather-ticker {
+  padding: 1rem;
+  width: calc(100% - 2rem);
+}
+.local-weather-ticker-header {
+  color: #2196F3;
+  font-size: 1.5rem;
+  padding-right: 1rem;
+}
+@media only screen and (max-width: 768px) {
+  .local-weather-ticker-header {
+    display: block;
+    padding-bottom: 0.5rem;
+  }
+}
+.local-weather-ticker div {
+  display: inline-block;
+  padding-right: 1rem;
+}
+.local-weather-category {
+  color: #2196F3;
+  padding-right: 0.5rem;
+}
+
 /* FORM */
 .weather-form {
   margin: 1rem 0 2rem 0;
@@ -61,6 +86,10 @@ h1 {
   color: #2196F3;
   background-color: #FFF;
   border: 1px solid #2196F3;
+}
+.weather-form .weather-form-helper-text {
+  font-size: 0.75rem;
+  font-style: italic;
 }
 
 /* CARD */
@@ -127,4 +156,14 @@ h1 {
 }
 .footer-link:hover {
   text-decoration: underline;
+}
+@media only screen and (max-width: 768px) {
+  .footer-container, .footer-copyright, .footer-link {
+    width: 100%;
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+  .footer-container {
+    padding: 0;
+  }
 }

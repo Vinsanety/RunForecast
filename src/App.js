@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import Grid from '@material-ui/core/Grid';
 import SearchAppBar from './components/AppBar.js';
-import GetWeatherContainer from './components/GetWeatherContainer.js';
+import CitySearchWeatherContainer from './components/CitySearchWeatherContainer.js';
+import LocalWeatherContainer from './components/LocalWeatherContainer.js';
 import Footer from './components/Footer.js';
 
 class App extends React.Component {
@@ -10,10 +11,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <SearchAppBar />
+        <LocalWeatherContainer />
         <div className="app-grid">
           <Grid container style={{ padding: '2rem' }} spacing={16}>
             <Grid item xs={12}>
-              <GetWeatherContainer />
+              <CitySearchWeatherContainer />
             </Grid>
           </Grid>
         </div>
