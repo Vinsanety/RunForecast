@@ -41,7 +41,7 @@ class CitySearchWeatherContainer extends React.Component {
         description: undefined,
         windSpeed: undefined,
         cloud: undefined,
-        error: "Please enter a City",
+        error: "Please enter a valid City (or City, State)",
       });
     };
   };

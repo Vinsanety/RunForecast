@@ -18,7 +18,7 @@ class Form extends React.Component {
             <button className="weather-form-btn">
               Send it!
             </button>
-            <p className="weather-form-helper-text">If entering state, use a comma (example: Denver, CO)</p>
+            <p className="weather-form-helper-text">If searching City and State, use a comma with full state name (example: Denver, Colorado)</p>
           </form>
         </Grid>
       </Grid>
