@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import Icon from '@material-ui/core/Icon';
-import SearchIcon from '@material-ui/icons/Search';
 
 const styles = theme => ({
   root: {
@@ -22,12 +20,6 @@ const styles = theme => ({
   menuButton: {
     marginLeft: -12,
     marginRight: 20,
-  },
-  title: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
   },
   search: {
     position: 'relative',
@@ -81,22 +73,9 @@ function SearchAppBar(props) {
           <a className="api-docs-link" href="https://openweathermap.org/" target="_blank" title="Visit API Docs" rel="noopener noreferrer">
             <Icon>wb_sunny</Icon>
           </a>
-          <Typography className={classes.title} variant="h6" color="inherit" noWrap>
+          <Typography variant="h6" color="inherit" noWrap>
             <a className="home-link" href="/" rel="noopener noreferrer">Open Weather Map API</a>
           </Typography>
-          <div className={classes.grow} />
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-            />
-          </div>
         </Toolbar>
       </AppBar>
     </div>
