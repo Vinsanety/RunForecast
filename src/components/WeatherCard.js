@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
-import CapitalizeFirstLetter from './CapitalizeFirstLetter.js';
+import CapitalizeFirstLetter from '../UtilComponents/CapitalizeFirstLetter.js';
 
 class WeatherCard extends React.Component {
   render () {
