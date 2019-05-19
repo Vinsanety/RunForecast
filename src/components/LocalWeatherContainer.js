@@ -59,10 +59,10 @@ class LocalWeatherContainer extends React.Component {
           <span className="local-weather-category">Temp</span>
           {this.state.temperature}&deg;F
         </div>
-        {/*<div>
-          <img className="weather-icon" src={"https://openweathermap.org/img/w/" + this.props.icon + ".png"} alt="Weather icon">
+        <div>
+          <img className="weather-icon" src={"http://openweathermap.org/img/w/" + this.state.icon + ".png"} alt="Weather icon">
           </img>
-        </div>*/}
+        </div>
         <div>
           <span className="local-weather-category">Description</span>
           <CapitalizeFirstLetter text={this.state.description} />

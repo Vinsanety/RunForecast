@@ -52,6 +52,9 @@ h1 {
   color: #2196F3;
   padding-right: 0.5rem;
 }
+.local-weather-ticker > div > img {
+  margin-bottom: -1rem;
+}
 
 /* FORM */
 .weather-form {
