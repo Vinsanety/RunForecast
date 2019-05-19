@@ -9,8 +9,8 @@ class LocalWeatherContainer extends React.Component {
     city: undefined,
     temperature: undefined,
     icon: undefined,
-    humidity: undefined,
     description: undefined,
+    humidity: undefined,
     windSpeed: undefined,
     cloud: undefined,
   };
@@ -28,8 +28,8 @@ class LocalWeatherContainer extends React.Component {
         city: weather_data.name,
         temperature: weather_data.main.temp,
         icon: weather_data.weather[0].icon,
-        humidity: weather_data.main.humidity,
         description: weather_data.weather[0].description,
+        humidity: weather_data.main.humidity,
         windSpeed: weather_data.wind.speed,
         cloud: weather_data.clouds.all,
       });
@@ -38,8 +38,8 @@ class LocalWeatherContainer extends React.Component {
         city: undefined,
         temperature: undefined,
         icon: undefined,
-        humidity: undefined,
         description: undefined,
+        humidity: undefined,
         windSpeed: undefined,
         cloud: undefined,
       });
@@ -63,12 +63,12 @@ class LocalWeatherContainer extends React.Component {
           </img>
         </div>*/}
         <div>
-          <span className="local-weather-category">Humidity</span>
-          {this.state.humidity}%
-        </div>
-        <div>
           <span className="local-weather-category">Description</span>
           {this.state.description}
+        </div>
+        <div>
+          <span className="local-weather-category">Humidity</span>
+          {this.state.humidity}%
         </div>
         <div>
           <span className="local-weather-category">Wind</span>

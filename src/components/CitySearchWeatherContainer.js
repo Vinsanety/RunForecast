@@ -9,8 +9,8 @@ class CitySearchWeatherContainer extends React.Component {
     city: undefined,
     temperature: undefined,
     icon: undefined,
-    humidity: undefined,
     description: undefined,
+    humidity: undefined,
     windSpeed: undefined,
     cloud: undefined,
     error: undefined,
@@ -26,8 +26,8 @@ class CitySearchWeatherContainer extends React.Component {
         city: data.name,
         temperature: data.main.temp,
         icon: data.weather[0].icon,
-        humidity: data.main.humidity,
         description: data.weather[0].description,
+        humidity: data.main.humidity,
         windSpeed: data.wind.speed,
         cloud: data.clouds.all,
         error: "",
@@ -37,8 +37,8 @@ class CitySearchWeatherContainer extends React.Component {
         city: undefined,
         temperature: undefined,
         icon: undefined,
-        humidity: undefined,
         description: undefined,
+        humidity: undefined,
         windSpeed: undefined,
         cloud: undefined,
         error: "Please enter a valid City (or City, State)",
@@ -53,8 +53,8 @@ class CitySearchWeatherContainer extends React.Component {
         <WeatherCard
           city={this.state.city}
           temperature={this.state.temperature}
-          humidity={this.state.humidity}
           description={this.state.description}
+          humidity={this.state.humidity}
           icon={this.state.icon}
           windSpeed={this.state.windSpeed}
           cloud={this.state.cloud}

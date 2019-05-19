@@ -1,9 +1,10 @@
 .App {
   background-color: #FAFAFA;
   min-height: 100vh;
+  position: relative;
 }
 .app-grid {
-  margin-bottom: 5rem;
+
 }
 @media only screen and (min-width: 768px) {
   .app-grid {
@@ -97,6 +98,7 @@ h1 {
 .weather-card {
   padding: 1rem 3rem 3rem 3rem;
   min-height: 25vh;
+  margin-bottom: 5rem;
 }
 @media only screen and (max-width: 768px) {
   .weather-card h1 {
@@ -134,8 +136,10 @@ h1 {
 
 /* FOOTER */
 .footer-container {
-  position: fixed;
+  position: absolute;
+  right: 0;
   bottom: 0;
+  left: 0;
   font-size: 1.25rem;
   width: 100%;
   padding: 1.5rem;
