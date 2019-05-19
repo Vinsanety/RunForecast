@@ -60,7 +60,7 @@ class LocalWeatherContainer extends React.Component {
           {this.state.temperature}&deg;F
         </div>
         <div>
-          <img className="weather-icon" src={"http://openweathermap.org/img/w/" + this.state.icon + ".png"} alt="Weather icon">
+          <img className="weather-icon" src={"https://openweathermap.org/img/w/" + this.state.icon + ".png"} alt="Weather icon">
           </img>
         </div>
         <div>
