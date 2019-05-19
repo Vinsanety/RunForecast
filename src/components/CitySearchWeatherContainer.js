@@ -9,7 +9,7 @@ class CitySearchWeatherContainer extends React.Component {
     city: undefined,
     temperature: undefined,
     icon: undefined,
-    description: undefined,
+    description: '',
     humidity: undefined,
     windSpeed: undefined,
     cloud: undefined,

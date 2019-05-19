@@ -1,5 +1,6 @@
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
+import CapitalizeFirstLetter from './CapitalizeFirstLetter.js';
 
 const API_KEY = "56e336360da929bb96ec1b44103e92aa";
 const Location =  "https://extreme-ip-lookup.com/json/";
@@ -9,7 +10,7 @@ class LocalWeatherContainer extends React.Component {
     city: undefined,
     temperature: undefined,
     icon: undefined,
-    description: undefined,
+    description: '',
     humidity: undefined,
     windSpeed: undefined,
     cloud: undefined,
@@ -64,7 +65,7 @@ class LocalWeatherContainer extends React.Component {
         </div>*/}
         <div>
           <span className="local-weather-category">Description</span>
-          {this.state.description}
+          <CapitalizeFirstLetter text={this.state.description} />
         </div>
         <div>
           <span className="local-weather-category">Humidity</span>

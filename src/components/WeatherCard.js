@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
+import CapitalizeFirstLetter from './CapitalizeFirstLetter.js';
 
 class WeatherCard extends React.Component {
   render () {
@@ -22,7 +23,8 @@ class WeatherCard extends React.Component {
         }
         { this.props.description &&
           <p>
-            <span className="weather-category">Conditions:</span> { this.props.description }
+            <span className="weather-category">Conditions:</span>
+              <CapitalizeFirstLetter text={this.props.description} />
             </p>
           }
         { this.props.humidity &&
