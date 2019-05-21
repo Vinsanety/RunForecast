@@ -31,6 +31,7 @@ h1 {
 /* Local Weather / PAPER */
 .local-weather-ticker {
   padding: 1rem;
+  padding-top: 0.5rem;
   border-radius: 0 !important;
 }
 .local-weather-ticker-header {
@@ -47,7 +48,7 @@ h1 {
   padding-right: 0.5rem;
 }
 .local-weather-ticker > div > img {
-  margin-bottom: -1rem;
+  margin-bottom: -1.25rem;
 }
 @media only screen and (max-width: 768px) {
   .local-weather-ticker-header {
@@ -156,7 +157,6 @@ h1 {
   bottom: 0;
   left: 0;
   font-size: 1.25rem;
-  width: 100%;
   padding: 1.5rem;
   color: #FFF;
   background-color: #2196F3;
@@ -179,7 +179,6 @@ h1 {
 }
 @media only screen and (max-width: 768px) {
   .footer-container, .footer-copyright, .footer-link {
-    width: 100%;
     padding: 0.25rem 0;
     text-align: center;
   }
