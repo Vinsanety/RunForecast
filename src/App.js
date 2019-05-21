@@ -13,7 +13,7 @@ class App extends React.Component {
         <SearchAppBar />
         <LocalWeatherContainer />
         <div className="app-grid">
-          <Grid container style={{ padding: '2rem' }} spacing={16}>
+          <Grid container style={{ padding: '2rem' }}>
             <Grid item xs={12}>
               <CitySearchWeatherContainer />
             </Grid>
