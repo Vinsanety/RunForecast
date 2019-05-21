@@ -74,7 +74,7 @@ function SearchAppBar(props) {
             <Icon>wb_sunny</Icon>
           </a>
           <Typography variant="h6" color="inherit" noWrap>
-            <a className="home-link" href="/" rel="noopener noreferrer">Open Weather Map API</a>
+            <a className="home-link" href="/" rel="noopener noreferrer">Run Forecast</a>
           </Typography>
         </Toolbar>
       </AppBar>

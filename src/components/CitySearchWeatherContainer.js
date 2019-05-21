@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import WeatherCard from './WeatherCard.js';
-import Form from './Form.js';
+import CityWeatherForm from './CityWeatherForm.js';
 
 const API_KEY = "56e336360da929bb96ec1b44103e92aa";
 
@@ -13,6 +13,8 @@ class CitySearchWeatherContainer extends React.Component {
     humidity: undefined,
     windSpeed: undefined,
     cloud: undefined,
+    sunrise: undefined,
+    sunset: undefined,
     error: undefined,
   }
   getCityWeather = async (e) => {
@@ -30,6 +32,8 @@ class CitySearchWeatherContainer extends React.Component {
         humidity: data.main.humidity,
         windSpeed: data.wind.speed,
         cloud: data.clouds.all,
+        sunrise: data.sys.all,
+        sunset: data.sys.all,
         error: "",
       });
     } else {
@@ -41,6 +45,8 @@ class CitySearchWeatherContainer extends React.Component {
         humidity: undefined,
         windSpeed: undefined,
         cloud: undefined,
+        sunrise: undefined,
+        sunset: undefined,
         error: "Please enter a valid City (or City, State)",
       });
     };
@@ -49,7 +55,7 @@ class CitySearchWeatherContainer extends React.Component {
   render () {
     return (
       <Fragment>
-        <Form getCityWeather={this.getCityWeather}/>
+        <CityWeatherForm getCityWeather={this.getCityWeather}/>
         <WeatherCard
           city={this.state.city}
           temperature={this.state.temperature}
@@ -58,6 +64,8 @@ class CitySearchWeatherContainer extends React.Component {
           icon={this.state.icon}
           windSpeed={this.state.windSpeed}
           cloud={this.state.cloud}
+          sunrise={this.state.sunrise}
+          sunset={this.state.sunset}
           error={this.state.error}
         />
       </Fragment>

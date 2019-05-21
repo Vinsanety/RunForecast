@@ -50,21 +50,11 @@ class LocalWeatherContainer extends React.Component {
   render () {
     return (
       <Paper className="local-weather-ticker">
-        <span className="local-weather-ticker-header">Local weather</span>
+        <span className="local-weather-ticker-header">{this.state.city} local weather</span>
         <div>
-          <span className="local-weather-category">City</span>
-          {this.state.city}
-        </div>
-        <div>
-          <span className="local-weather-category">Temp</span>
+          <span className="local-weather-category">Conditions</span>
           {this.state.temperature}&deg;F
-        </div>
-        <div>
-          <img className="weather-icon" src={"https://openweathermap.org/img/w/" + this.state.icon + ".png"} alt="Weather icon">
-          </img>
-        </div>
-        <div>
-          <span className="local-weather-category">Description</span>
+          <img className="weather-icon" src={"https://openweathermap.org/img/w/" + this.state.icon + ".png"} alt="Weather icon"></img>
           <CapitalizeFirstLetter text={this.state.description} />
         </div>
         <div>
@@ -76,7 +66,7 @@ class LocalWeatherContainer extends React.Component {
           {this.state.windSpeed}mph
         </div>
         <div>
-          <span className="local-weather-category">Cloud cover</span>
+          <span className="local-weather-category">Cloud</span>
           {this.state.cloud}%
         </div>
       </Paper>
