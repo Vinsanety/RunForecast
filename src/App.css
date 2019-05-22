@@ -128,6 +128,9 @@ h1 {
   .weather-card h1 {
     display: none;
   }
+  .weather-card {
+    padding: 0;
+  }
 }
 .weather-card p {
   padding: 1.5rem;
@@ -156,6 +159,16 @@ h1 {
 }
 .weather-card .weather-card-error {
   border: none;
+}
+.sunrise-icon, .sunset-icon {
+  margin-bottom: -0.5rem;
+  font-size: 36px !important;
+}
+.weather-card .sunrise-icon {
+  color: #ffa700;
+}
+.weather-card .sunset-icon {
+  color: #fd5e53;
 }
 
 /* FOOTER */

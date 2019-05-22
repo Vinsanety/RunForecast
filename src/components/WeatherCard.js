@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
 import CapitalizeFirstLetter from '../UtilComponents/CapitalizeFirstLetter.js';
+import Icon from '@material-ui/core/Icon';
 
 class WeatherCard extends React.Component {
   render () {
@@ -14,7 +15,7 @@ class WeatherCard extends React.Component {
         }
         { this.props.temperature &&
           <p>
-            <span className="weather-category">Temperature:</span> { this.props.temperature }<span className="measurement-unit">&deg;F</span>
+            <span className="weather-category">Temp:</span> { this.props.temperature }<span className="measurement-unit">&deg;F</span>
             { this.props.icon &&
                 <img className="weather-icon" src={"https://openweathermap.org/img/w/" + this.props.icon + ".png"} alt="Weather icon">
                 </img>
@@ -29,7 +30,7 @@ class WeatherCard extends React.Component {
           }
         { this.props.humidity &&
           <p>
-            <span className="weather-category">Humidity:</span> { this.props.humidity }%
+            <span className="weather-category">Humidity:</span> { this.props.humidity }<span className="measurement-unit">%</span>
           </p>
         }
         { this.props.windSpeed &&
@@ -40,6 +41,16 @@ class WeatherCard extends React.Component {
         { this.props.cloud &&
           <p>
             <span className="weather-category">Cloudiness:</span> { this.props.cloud }<span className="measurement-unit">%</span>
+          </p>
+        }
+        { this.props.sunrise &&
+          <p>
+            <span className="weather-category">Sunrise:</span> { this.props.sunrise } <Icon className="sunrise-icon">brightness_5</Icon>
+          </p>
+        }
+        { this.props.sunrise &&
+          <p>
+            <span className="weather-category">Sunset:</span> { this.props.sunset } <Icon className="sunset-icon">brightness_4</Icon>
           </p>
         }
         { this.props.error &&

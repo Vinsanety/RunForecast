@@ -23,6 +23,13 @@ class CitySearchWeatherContainer extends React.Component {
     const api_call = await fetch(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=imperial`);
     const data = await api_call.json();
     console.log(data);
+    // Sunrise and Sunset Extrapolating
+    var sunriseMil = data.sys.sunrise;
+    var sunsetMil = data.sys.sunset;
+    var sunrise = new Date(sunriseMil * 1000);
+    var sunset = new Date(sunsetMil * 1000);
+    var sunriseStr = sunrise.toLocaleTimeString();
+    var sunsetStr = sunset.toLocaleTimeString();
     if (data.name) {
       this.setState({
         city: data.name,
@@ -32,8 +39,8 @@ class CitySearchWeatherContainer extends React.Component {
         humidity: data.main.humidity,
         windSpeed: data.wind.speed,
         cloud: data.clouds.all,
-        sunrise: data.sys.all,
-        sunset: data.sys.all,
+        sunrise: sunriseStr,
+        sunset: sunsetStr,
         error: "",
       });
     } else {
