@@ -24,13 +24,11 @@ class CitySearchWeatherContainer extends React.Component {
     const data = await api_call.json();
     console.log(data);
     if (data.name) {
-      // Sunrise and Sunset Extrapolating
+      // Sunrise and Sunset UTC Extrapolating
       var sunriseMil = data.sys.sunrise;
       var sunsetMil = data.sys.sunset;
-      var sunrise = new Date(sunriseMil * 1000);
-      var sunset = new Date(sunsetMil * 1000);
-      var sunriseStr = sunrise.toLocaleTimeString();
-      var sunsetStr = sunset.toLocaleTimeString();
+      var sunrise = new Date(sunriseMil * 1000).toLocaleTimeString();
+      var sunset = new Date(sunsetMil * 1000).toLocaleTimeString();
       this.setState({
         city: data.name,
         temperature: data.main.temp,
@@ -39,8 +37,8 @@ class CitySearchWeatherContainer extends React.Component {
         humidity: data.main.humidity,
         windSpeed: data.wind.speed,
         cloud: data.clouds.all,
-        sunrise: sunriseStr,
-        sunset: sunsetStr,
+        sunrise: sunrise,
+        sunset: sunset,
         error: "",
       });
     } else {
