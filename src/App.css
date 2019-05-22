@@ -14,29 +14,44 @@
 h1 {
   color: #2196F3;
 }
-.api-docs-link {
+
+/* NAV BAR */
+.navbar {
+  margin: 0;
+  padding: 0;
+}
+.navbar .app-bar {
+  background-color: #2196F3 !important;
+}
+.navbar .app-bar a {
+  text-decoration: none;
+  color: #FFF;
+}
+.api-docs-link span {
   color: #FFEB3B;
   padding: 19px 1rem;
   width: 25px;
   height: 25px;
+  transition: all 1.5s ease-in-out;
 }
 .api-docs-link:hover {
   background-color: rgba(255, 255, 255, 0.25);
 }
-.api-docs-link span {
-  transition: all 1.5s ease-in-out;
-}
 .api-docs-link span:hover {
   transform: rotate(360deg) scale(1.5);
 }
-.home-link {
+.navbar-link {
   text-decoration: none;
   color: #FFF;
-  line-height: 64px;
-  padding: 2rem 1rem 1.3rem 1rem;
+  padding: 1.5rem;
 }
-.home-link:hover {
+.navbar-link:hover {
   background-color: rgba(255, 255, 255, 0.25);
+}
+@media only screen and (max-width: 768px) {
+  .navbar-link {
+    padding: 1.5rem 0.5rem;
+  }
 }
 
 /* Local Weather / PAPER */
@@ -92,7 +107,7 @@ h1 {
   margin-right: 1rem;
   color: #424242;
 }
-.MuiInput-underline-195:after {
+[class*="MuiInput-underline-"]:after {
   border-bottom: 2px solid #2196F3 !important;
 }
 .city-weather-form-btn {
@@ -169,6 +184,11 @@ h1 {
 }
 .weather-card .sunset-icon {
   color: #fd5e53;
+}
+
+/* WEATHER CAM CONTAINER */
+.weather-cam-container h1 {
+  text-align: center;
 }
 
 /* FOOTER */
