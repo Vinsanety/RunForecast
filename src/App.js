@@ -4,7 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar.js';
 import LocalWeatherContainer from './components/LocalWeatherContainer.js';
 import Home from './components/Home.js';
-import WeatherCamContainer from './components/WeatherCamContainer.js';
+import Cams from './components/Cams.js';
 import Footer from './components/Footer.js';
 
 const Routes = (
@@ -15,7 +15,7 @@ const Routes = (
       </ul>
       <LocalWeatherContainer />
       <Route exact path="/" component={Home} />
-      <Route path="/weathercam" component={WeatherCamContainer} />
+      <Route path="/weathercam" component={Cams} />
     </div>
   </Router>
 )
