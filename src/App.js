@@ -17,6 +17,7 @@ const Routes = (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/weathercam" component={Cams} />
+        <Route component={Home} />
       </Switch>
     </div>
   </Router>
