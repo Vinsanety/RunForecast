@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar.js';
 import LocalWeatherContainer from './components/LocalWeatherContainer.js';
@@ -14,8 +14,10 @@ const Routes = (
         <Navbar />
       </ul>
       <LocalWeatherContainer />
-      <Route exact path="/" component={Home} />
-      <Route path="/weathercam" component={Cams} />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/weathercam" component={Cams} />
+      </Switch>
     </div>
   </Router>
 )
