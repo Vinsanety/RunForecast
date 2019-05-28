@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 
@@ -6,13 +6,13 @@ class ForecastCard extends React.Component {
   render () {
     const cardForecastData = this.props.forecast;
     return (
-      <Fragment>
+      <div className="forecast-card-container">
         { this.props.city &&
           <h1>{ this.props.city } Forecast (5day/3hour)</h1>
         }
         <Grid container spacing={16}>
         {cardForecastData.map((forecastData, index) =>
-          <Grid key={index} item xs={12} md={4}>
+          <Grid key={index} item xs={12} md={3}>
             <Card className="forecast-weather-card">
               { forecastData.dt_txt &&
                  <p>
@@ -44,7 +44,7 @@ class ForecastCard extends React.Component {
           </Grid>
         )}
         </Grid>
-      </Fragment>
+      </div>
     );
   }
 }

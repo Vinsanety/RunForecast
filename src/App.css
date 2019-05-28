@@ -187,8 +187,20 @@ h1 {
 }
 
 /* FORECAST WEATHER CARD */
+.forecast-card-container {
+  padding-bottom: 5rem;
+}
 .forecast-weather-card {
   font-size: 0.9rem;
+  padding: 0 1rem;
+}
+.forecast-weather-card .weather-category {
+  color: #2196F3;
+}
+.forecast-weather-card .weather-icon {
+  height: 2rem;
+  width: 2rem;
+  margin-bottom: -0.7rem;
 }
 
 /* WEATHER CAM CONTAINER */
