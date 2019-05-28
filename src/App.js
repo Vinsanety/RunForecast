@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, HashRouter as Router } from 'react-router-dom';
+import { Route, HashRouter as Router } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar.js';
 import LocalWeatherContainer from './components/LocalWeatherContainer.js';

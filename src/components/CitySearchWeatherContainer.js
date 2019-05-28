@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
-import WeatherCard from './WeatherCard.js';
 import CityWeatherForm from './CityWeatherForm.js';
+import WeatherCard from './WeatherCard.js';
+import ForecastCard from './ForecastCard.js';
 
 const API_KEY = "56e336360da929bb96ec1b44103e92aa";
 
@@ -16,30 +17,38 @@ class CitySearchWeatherContainer extends React.Component {
     sunrise: undefined,
     sunset: undefined,
     error: undefined,
+    forecast: [],
   }
   getCityWeather = async (e) => {
     e.preventDefault();
     const city = e.target.elements.city.value;
-    const api_call = await fetch(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=imperial`);
-    const data = await api_call.json();
-    console.log(data);
-    if (data.name) {
+    // Current Weather API Call
+    const current_weather_api_call = await fetch(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=imperial`);
+    const current_weather_data = await current_weather_api_call.json();
+    console.log(current_weather_data);
+    // Forecast Weather API Call
+    const forecast_api_call = await fetch(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=imperial`);
+    const forecast_data = await forecast_api_call.json();
+    console.log(forecast_data.list);
+
+    if (current_weather_data.name) {
       // Sunrise and Sunset UTC Extrapolating
-      var sunriseMil = data.sys.sunrise;
-      var sunsetMil = data.sys.sunset;
+      var sunriseMil = current_weather_data.sys.sunrise;
+      var sunsetMil = current_weather_data.sys.sunset;
       var sunrise = new Date(sunriseMil * 1000).toLocaleTimeString();
       var sunset = new Date(sunsetMil * 1000).toLocaleTimeString();
       this.setState({
-        city: data.name,
-        temperature: data.main.temp,
-        icon: data.weather[0].icon,
-        description: data.weather[0].description,
-        humidity: data.main.humidity,
-        windSpeed: data.wind.speed,
-        cloud: data.clouds.all,
+        city: current_weather_data.name,
+        temperature: current_weather_data.main.temp,
+        icon: current_weather_data.weather[0].icon,
+        description: current_weather_data.weather[0].description,
+        humidity: current_weather_data.main.humidity,
+        windSpeed: current_weather_data.wind.speed,
+        cloud: current_weather_data.clouds.all,
         sunrise: sunrise,
         sunset: sunset,
         error: "",
+        forecast: forecast_data.list,
       });
     } else {
       this.setState({
@@ -53,6 +62,7 @@ class CitySearchWeatherContainer extends React.Component {
         sunrise: undefined,
         sunset: undefined,
         error: "Please enter a valid City (or City, State)",
+        forecast: [],
       });
     };
   };
@@ -72,6 +82,10 @@ class CitySearchWeatherContainer extends React.Component {
           sunrise={this.state.sunrise}
           sunset={this.state.sunset}
           error={this.state.error}
+        />
+        <ForecastCard
+          city={this.state.city}
+          forecast={this.state.forecast}
         />
       </Fragment>
     )
