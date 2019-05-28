@@ -1,105 +1,46 @@
 import React, { Fragment } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
-import CapitalizeFirstLetter from '../UtilComponents/CapitalizeFirstLetter.js';
-import Icon from '@material-ui/core/Icon';
 
 class ForecastCard extends React.Component {
   render () {
+    const cardForecastData = this.props.forecast;
     return (
       <Fragment>
-        <h1>{ this.props.name } Forecast (5day/3hour)</h1>
+        <h1>{ this.props.city } Forecast (5day/3hour)</h1>
         <Grid container spacing={16}>
-          <Grid item xs={12} md={4}>
+        {cardForecastData.map((forecastData, index) =>
+          <Grid key={index} item xs={12} md={4}>
             <Card className="weather-card">
-              { this.props.f1Time &&
+              { forecastData.dt_txt &&
                  <p>
-                  <span className="weather-category">Time:</span> { this.props.f1Time }
+                  <span className="weather-category">Time:</span> { forecastData.dt_txt }
                 </p>
               }
-              { this.props.f1Temp &&
+              { forecastData.main.temp &&
                 <p>
-                  <span className="weather-category">Temp:</span> { this.props.f1Temp }<span className="measurement-unit">&deg;F</span>
-                  { this.props.f1Icon &&
-                      <img className="weather-icon" src={"https://openweathermap.org/img/w/" + this.props.f1Icon + ".png"} alt="Weather icon">
+                  <span className="weather-category">Temp:</span> { forecastData.main.temp }<span className="measurement-unit">&deg;F</span>
+                  { forecastData.weather[0].icon &&
+                      <img className="weather-icon" src={"https://openweathermap.org/img/w/" + forecastData.weather[0].icon + ".png"} alt="Weather icon">
                       </img>
                   }
                 </p>
               }
-              { this.props.f1Humidity &&
+              { forecastData.main.humidity &&
                  <p>
-                  <span className="weather-category">Humidity:</span> { this.props.f1Humidity }
+                  <span className="weather-category">Humidity:</span> { forecastData.main.humidity }
                   <span className="measurement-unit">%</span>
                 </p>
               }
-              { this.props.f1Wind &&
+              { forecastData.wind.speed &&
                  <p>
-                  <span className="weather-category">Wind:</span> { this.props.f1Wind }
+                  <span className="weather-category">Wind:</span> { forecastData.wind.speed }
                   <span className="measurement-unit">mph</span>
                 </p>
               }
             </Card>
           </Grid>
-          <Grid item xs={12} md={4}>
-            <Card className="weather-card">
-              { this.props.f1Time &&
-                 <p>
-                  <span className="weather-category">Time:</span> { this.props.f1Time }
-                </p>
-              }
-              { this.props.f1Temp &&
-                <p>
-                  <span className="weather-category">Temp:</span> { this.props.f1Temp }<span className="measurement-unit">&deg;F</span>
-                  { this.props.f1Icon &&
-                      <img className="weather-icon" src={"https://openweathermap.org/img/w/" + this.props.f1Icon + ".png"} alt="Weather icon">
-                      </img>
-                  }
-                </p>
-              }
-              { this.props.f1Humidity &&
-                 <p>
-                  <span className="weather-category">Humidity:</span> { this.props.f1Humidity }
-                  <span className="measurement-unit">%</span>
-                </p>
-              }
-              { this.props.f1Wind &&
-                 <p>
-                  <span className="weather-category">Wind:</span> { this.props.f1Wind }
-                  <span className="measurement-unit">mph</span>
-                </p>
-              }
-            </Card>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Card className="weather-card">
-              { this.props.f1Time &&
-                 <p>
-                  <span className="weather-category">Time:</span> { this.props.f1Time }
-                </p>
-              }
-              { this.props.f1Temp &&
-                <p>
-                  <span className="weather-category">Temp:</span> { this.props.f1Temp }<span className="measurement-unit">&deg;F</span>
-                  { this.props.f1Icon &&
-                      <img className="weather-icon" src={"https://openweathermap.org/img/w/" + this.props.f1Icon + ".png"} alt="Weather icon">
-                      </img>
-                  }
-                </p>
-              }
-              { this.props.f1Humidity &&
-                 <p>
-                  <span className="weather-category">Humidity:</span> { this.props.f1Humidity }
-                  <span className="measurement-unit">%</span>
-                </p>
-              }
-              { this.props.f1Wind &&
-                 <p>
-                  <span className="weather-category">Wind:</span> { this.props.f1Wind }
-                  <span className="measurement-unit">mph</span>
-                </p>
-              }
-            </Card>
-          </Grid>
+        )}
         </Grid>
       </Fragment>
     );

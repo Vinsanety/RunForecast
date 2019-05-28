@@ -18,23 +18,19 @@ class CitySearchWeatherContainer extends React.Component {
     sunset: undefined,
     error: undefined,
 
-    f1Time: undefined,
-    f1Temp: undefined,
-    f1Icon: undefined,
-    f1Humidity: undefined,
-    f1Wind: undefined,
+    forecast: [],
   }
   getCityWeather = async (e) => {
     e.preventDefault();
     const city = e.target.elements.city.value;
-
+    // Current Weather API Call
     const current_weather_api_call = await fetch(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=imperial`);
     const current_weather_data = await current_weather_api_call.json();
     console.log(current_weather_data);
-
+    // Forecast Weather API Call
     const forecast_api_call = await fetch(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=imperial`);
     const forecast_data = await forecast_api_call.json();
-    console.log(forecast_data.list[0]);
+    console.log(forecast_data.list);
 
     if (current_weather_data.name) {
       // Sunrise and Sunset UTC Extrapolating
@@ -54,11 +50,7 @@ class CitySearchWeatherContainer extends React.Component {
         sunset: sunset,
         error: "",
 
-        f1Time: forecast_data.list[0].dt_txt,
-        f1Temp: forecast_data.list[0].main.temp,
-        f1Icon: forecast_data.list[0].weather[0].icon,
-        f1Humidity: forecast_data.list[0].main.humidity,
-        f1Wind: forecast_data.list[0].wind.speed,
+        forecast: forecast_data.list,
       });
     } else {
       this.setState({
@@ -73,14 +65,9 @@ class CitySearchWeatherContainer extends React.Component {
         sunset: undefined,
         error: "Please enter a valid City (or City, State)",
 
-        f1Time: undefined,
-        f1Temp: undefined,
-        f1Icon: undefined,
-        f1Humidity: undefined,
-        f1Wind: undefined,
+        forecast: [],
       });
     };
-
   };
 
   render () {
@@ -101,11 +88,8 @@ class CitySearchWeatherContainer extends React.Component {
         />
         <ForecastCard
           city={this.state.city}
-          f1Time={this.state.f1Time}
-          f1Temp={this.state.f1Temp}
-          f1Icon={this.state.f1Icon}
-          f1Humidity={this.state.f1Humidity}
-          f1Wind={this.state.f1Wind}
+
+          forecast={this.state.forecast}
         />
       </Fragment>
     )
