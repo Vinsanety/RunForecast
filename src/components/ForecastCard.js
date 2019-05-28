@@ -7,11 +7,13 @@ class ForecastCard extends React.Component {
     const cardForecastData = this.props.forecast;
     return (
       <Fragment>
-        <h1>{ this.props.city } Forecast (5day/3hour)</h1>
+        { this.props.city &&
+          <h1>{ this.props.city } Forecast (5day/3hour)</h1>
+        }
         <Grid container spacing={16}>
         {cardForecastData.map((forecastData, index) =>
           <Grid key={index} item xs={12} md={4}>
-            <Card className="weather-card">
+            <Card className="forecast-weather-card">
               { forecastData.dt_txt &&
                  <p>
                   <span className="weather-category">Time:</span> { forecastData.dt_txt }

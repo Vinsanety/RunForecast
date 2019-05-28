@@ -186,6 +186,11 @@ h1 {
   color: #fd5e53;
 }
 
+/* FORECAST WEATHER CARD */
+.forecast-weather-card {
+  font-size: 0.9rem;
+}
+
 /* WEATHER CAM CONTAINER */
 .weather-cam-container {
   padding-bottom: 5rem;

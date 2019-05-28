@@ -17,7 +17,6 @@ class CitySearchWeatherContainer extends React.Component {
     sunrise: undefined,
     sunset: undefined,
     error: undefined,
-
     forecast: [],
   }
   getCityWeather = async (e) => {
@@ -49,7 +48,6 @@ class CitySearchWeatherContainer extends React.Component {
         sunrise: sunrise,
         sunset: sunset,
         error: "",
-
         forecast: forecast_data.list,
       });
     } else {
@@ -64,7 +62,6 @@ class CitySearchWeatherContainer extends React.Component {
         sunrise: undefined,
         sunset: undefined,
         error: "Please enter a valid City (or City, State)",
-
         forecast: [],
       });
     };
@@ -88,7 +85,6 @@ class CitySearchWeatherContainer extends React.Component {
         />
         <ForecastCard
           city={this.state.city}
-
           forecast={this.state.forecast}
         />
       </Fragment>
