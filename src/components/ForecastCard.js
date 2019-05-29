@@ -29,7 +29,7 @@ class ForecastCard extends React.Component {
               }
               { forecastData.main.temp &&
                 <p>
-                  <span className="weather-category">Temp:</span> { forecastData.main.temp }<span className="measurement-unit">&deg;F</span>
+                  <span className="weather-category">Temp:</span> { Math.round(forecastData.main.temp) }<span className="measurement-unit">&deg;F</span>
                   { forecastData.weather[0].icon &&
                       <img className="weather-icon" src={"https://openweathermap.org/img/w/" + forecastData.weather[0].icon + ".png"} alt="Weather icon">
                       </img>
@@ -44,7 +44,7 @@ class ForecastCard extends React.Component {
               }
               { forecastData.wind.speed &&
                  <p>
-                  <span className="weather-category">Wind:</span> { forecastData.wind.speed }
+                  <span className="weather-category">Wind:</span> { Math.round(forecastData.wind.speed) }
                   <span className="measurement-unit">mph</span>
                 </p>
               }

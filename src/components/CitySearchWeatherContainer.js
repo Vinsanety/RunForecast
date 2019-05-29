@@ -46,11 +46,11 @@ class CitySearchWeatherContainer extends React.Component {
       });
       this.setState({
         city: current_weather_data.name,
-        temperature: current_weather_data.main.temp,
+        temperature: Math.round(current_weather_data.main.temp),
         icon: current_weather_data.weather[0].icon,
         description: current_weather_data.weather[0].description,
         humidity: current_weather_data.main.humidity,
-        windSpeed: current_weather_data.wind.speed,
+        windSpeed: Math.round(current_weather_data.wind.speed),
         cloud: current_weather_data.clouds.all,
         sunrise: sunrise,
         sunset: sunset,

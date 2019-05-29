@@ -27,11 +27,11 @@ class LocalWeatherContainer extends React.Component {
     if (weather_data.name) {
       this.setState({
         city: weather_data.name,
-        temperature: weather_data.main.temp,
+        temperature: Math.round(weather_data.main.temp),
         icon: weather_data.weather[0].icon,
         description: weather_data.weather[0].description,
         humidity: weather_data.main.humidity,
-        windSpeed: weather_data.wind.speed,
+        windSpeed: Math.round(weather_data.wind.speed),
         cloud: weather_data.clouds.all,
       });
     } else {
