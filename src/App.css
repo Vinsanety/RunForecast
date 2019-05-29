@@ -128,10 +128,6 @@ h1 {
   background-color: #FFF;
   border: 1px solid #2196F3;
 }
-.city-weather-form .city-weather-form-helper-text {
-  font-size: 0.75rem;
-  font-style: italic;
-}
 
 /* CARD */
 .weather-card {
@@ -167,13 +163,23 @@ h1 {
 .weather-card .weather-icon {
   margin-bottom: -1rem;
 }
-.weather-card-error {
-  font-size: 1.75rem;
-  color: #F44336;
-  text-align: center;
-}
 .weather-card .weather-card-error {
-  border: none;
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+@media only screen and (max-width: 768px) {
+  .weather-card .weather-card-error {
+    margin-top: 0;
+  }
+}
+.weather-card .city-weather-form-helper-text {
+  font-size: 0.9rem;
+  padding-top: 0;
+}
+.weather-card .weather-card-error, .weather-card .city-weather-form-helper-text {
+  color: #3F51B5;
+  text-align: center;
+  border-bottom: none;
 }
 .sunrise-icon, .sunset-icon {
   margin-bottom: -0.5rem;

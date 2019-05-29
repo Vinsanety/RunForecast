@@ -16,6 +16,7 @@ class CitySearchWeatherContainer extends React.Component {
     cloud: undefined,
     sunrise: undefined,
     sunset: undefined,
+    formHint: undefined,
     error: undefined,
     forecast: [],
   }
@@ -47,6 +48,7 @@ class CitySearchWeatherContainer extends React.Component {
         cloud: current_weather_data.clouds.all,
         sunrise: sunrise,
         sunset: sunset,
+        formHint: "",
         error: "",
         forecast: forecast_data.list,
       });
@@ -61,6 +63,7 @@ class CitySearchWeatherContainer extends React.Component {
         cloud: undefined,
         sunrise: undefined,
         sunset: undefined,
+        formHint: "If searching City and State, use a comma with full state name (example: Denver, Colorado)",
         error: "Please enter a valid City (or City, State)",
         forecast: [],
       });
@@ -70,7 +73,9 @@ class CitySearchWeatherContainer extends React.Component {
   render () {
     return (
       <Fragment>
-        <CityWeatherForm getCityWeather={this.getCityWeather}/>
+        <CityWeatherForm
+          getCityWeather={this.getCityWeather}
+        />
         <WeatherCard
           city={this.state.city}
           temperature={this.state.temperature}
@@ -82,6 +87,7 @@ class CitySearchWeatherContainer extends React.Component {
           sunrise={this.state.sunrise}
           sunset={this.state.sunset}
           error={this.state.error}
+          formHint={this.state.formHint}
         />
         <ForecastCard
           city={this.state.city}

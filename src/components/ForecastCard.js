@@ -12,7 +12,7 @@ class ForecastCard extends React.Component {
         }
         <Grid container spacing={16}>
         {cardForecastData.map((forecastData, index) =>
-          <Grid key={index} item xs={12} md={3}>
+          <Grid key={index} item xs={12} md={2}>
             <Card className="forecast-weather-card">
               { forecastData.dt_txt &&
                  <p>
