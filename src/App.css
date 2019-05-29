@@ -200,6 +200,11 @@ h1 {
   font-size: 0.9rem;
   padding: 0 1rem;
 }
+.forecast-weather-card .forecast-time-stamp {
+  font-size: 1rem;
+  text-align: center;
+  color: #2196F3;
+}
 .forecast-weather-card .weather-category {
   color: #2196F3;
 }

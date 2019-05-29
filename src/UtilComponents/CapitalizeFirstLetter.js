@@ -1,4 +1,5 @@
 import React from 'react';
+
 class CapitalizeFirstLetter extends React.Component {
 
   render() {

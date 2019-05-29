@@ -36,8 +36,14 @@ class CitySearchWeatherContainer extends React.Component {
       // Sunrise and Sunset UTC Extrapolating
       var sunriseMil = current_weather_data.sys.sunrise;
       var sunsetMil = current_weather_data.sys.sunset;
-      var sunrise = new Date(sunriseMil * 1000).toLocaleTimeString();
-      var sunset = new Date(sunsetMil * 1000).toLocaleTimeString();
+      var sunrise = new Date(sunriseMil * 1000).toLocaleTimeString(undefined, {
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+      var sunset = new Date(sunsetMil * 1000).toLocaleTimeString(undefined, {
+        hour: '2-digit',
+        minute: '2-digit',
+      });
       this.setState({
         city: current_weather_data.name,
         temperature: current_weather_data.main.temp,

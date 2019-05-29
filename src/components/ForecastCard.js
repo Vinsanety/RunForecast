@@ -14,9 +14,17 @@ class ForecastCard extends React.Component {
         {cardForecastData.map((forecastData, index) =>
           <Grid key={index} item xs={12} md={2}>
             <Card className="forecast-weather-card">
-              { forecastData.dt_txt &&
-                 <p>
-                  <span className="weather-category">Time:</span> { forecastData.dt_txt }
+              { forecastData.dt &&
+                <p className="forecast-time-stamp">
+                  {
+                    new Date(forecastData.dt *1000).toLocaleString(undefined, {
+                    	day: 'numeric',
+                    	month: 'short',
+                    	year: undefined,
+                    	hour: '2-digit',
+                    	minute: '2-digit',
+                    })
+                  }
                 </p>
               }
               { forecastData.main.temp &&
