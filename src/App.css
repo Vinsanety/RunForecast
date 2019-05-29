@@ -132,26 +132,63 @@ h1 {
 /* CARD */
 .weather-card {
   padding: 1rem 3rem 3rem 3rem;
-  min-height: 25vh;
+  min-height: 20vh;
   margin-bottom: 5rem;
+
+  background-color: #2196F3 !important;
+  color: #FFF;
+  width: 50%;
+  width: 60%;
+  margin: 0 auto;
 }
 @media only screen and (max-width: 768px) {
-  .weather-card h1 {
+  /* .weather-card h1 {
     display: none;
-  }
+  } */
   .weather-card {
-    padding: 0;
+    /* padding: 0; */
+
+    width: 100%;
+    padding: 0.5rem;
   }
 }
 .weather-card p {
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
+  text-align: center;
   margin: 0;
   font-size: 1.5rem;
-  border-bottom: 2px solid #2196F3;
+  /* border-bottom: 2px solid #2196F3; */
+}
+.weather-card .weather-card-location {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.weather-card .weather-card-data {
+  font-size: 3rem;
+}
+.weather-card .weather-card-meta-data {
+  margin-top: 1.5rem;
+}
+@media only screen and (max-width: 768px) {
+  .weather-card p {
+    font-size: 0.9rem;
+  }
+  .weather-card .weather-card-location {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .weather-card .weather-card-data {
+    font-size: 2rem;
+  }
+  .weather-card .weather-card-meta-data {
+    margin-top: 1rem;
+  }
 }
 .weather-card .weather-category {
-  color: #2196F3;
-  font-size: 1.25rem;
+  /* color: #2196F3; */
+  color: #eeeeee;
+  /* font-size: 1.25rem; */
+  font-size: 0.85rem;
   font-weight: 700;
   margin-right: 0.75rem;
 }
@@ -177,19 +214,26 @@ h1 {
   padding-top: 0;
 }
 .weather-card .weather-card-error, .weather-card .city-weather-form-helper-text {
-  color: #3F51B5;
+  /* color: #3F51B5; */
+  color: #FFF;
   text-align: center;
   border-bottom: none;
 }
 .sunrise-icon, .sunset-icon {
-  margin-bottom: -0.5rem;
-  font-size: 36px !important;
+  font-size: 1.25rem !important;
+  /* margin-bottom: -0.5rem; */
 }
 .weather-card .sunrise-icon {
   color: #ffa700;
 }
 .weather-card .sunset-icon {
   color: #fd5e53;
+}
+@media only screen and (max-width: 768px) {
+  .weather-card .sunrise-icon, .weather-card .sunset-icon {
+    font-size: 1rem !important;
+    margin: 0;
+  }
 }
 
 /* FORECAST WEATHER CARD */
