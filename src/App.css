@@ -231,25 +231,48 @@ h2 {
 }
 
 /* FORECAST WEATHER CARD */
-.forecast-card-container {
+.forecast-container {
   padding-bottom: 5rem;
 }
-.forecast-weather-card {
-  font-size: 0.9rem;
-  padding: 0 1rem;
+.forecast-table-wrapper {
+  overflow-x: auto;
 }
-.forecast-weather-card .forecast-time-stamp {
+.forecast-table {
+  width: 100%;
+  min-width: 700px !important,
+}
+.forecast-table-header th {
+  text-align: left;
+  font-size: 1.25rem;
+}
+.forecast-table-body td {
   font-size: 1rem;
-  text-align: center;
-  color: #2196F3;
+  font-size: 1.25rem;
 }
-.forecast-weather-card .weather-category {
-  color: #2196F3;
+.forecast-table-body .forecast-table-date {
+  font-size: 0.9rem;
 }
-.forecast-weather-card .weather-icon {
-  height: 2rem;
-  width: 2rem;
-  margin-bottom: -0.7rem;
+.forecast-table-body .forecast-table-temp {
+  padding-bottom: 1rem;
+}
+.forecast-table-body td .weather-icon {
+  height: 3rem;
+  width: 3rem;
+  margin-bottom: -1rem;
+}
+.forecast-table-body .measurement-unit {
+  font-size: 0.85rem;
+  padding-left: 0.25rem;
+  font-weight: 100;
+}
+@media only screen and (max-width: 768px) {
+  .forecast-table .forecast-table-body td {
+    padding-right: 0 !important;
+  }
+  .forecast-table-body .forecast-table-date {
+    padding-left: 1rem;
+    font-size: 0.8rem;
+  }
 }
 
 /* WEATHER CAM CONTAINER */
