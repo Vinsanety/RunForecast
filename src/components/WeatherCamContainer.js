@@ -22,35 +22,13 @@ const styles = theme => ({
   source: {
     src: null,
   },
-  sectionHeader: {
-    ...theme.typography.button,
-    backgroundColor: theme.palette.common.white,
-    padding: theme.spacing.unit,
-    margin: '2rem 0 1rem 0',
-    fontSize: '1.125rem',
-    boxShadow: '0px 1px 3px 0px rgba(0,0,0,0.2)',
-    borderRadius: '4px',
-  }
 });
-
-{/* const cardData = [
-  {
-    img: `https://youtu.be/Fq68_K0YlIA`,
-    title: 'Denver City Live Cam',
-    author: 'author',
-  },
-  {
-    img: `https://youtu.be/pM7R7EArdzo`,
-    title: 'Breckenridge Live Cam',
-    author: 'author',
-  },
-]; */}
 
 function WeatherCamContainer(props) {
   const { classes } = props;
   return (
     <Fragment>
-      <div className={classes.sectionHeader}>{"Colorado Web Cams"}</div>
+      <h2>Colorado Web Cams</h2>
       <Grid container spacing={16}>
         <Grid item xs={12} md={4}>
           <Card className={classes.card}>
@@ -180,7 +158,7 @@ function WeatherCamContainer(props) {
         </Grid>
 
       </Grid>
-      <div className={classes.sectionHeader}>{"Utah Web Cams"}</div>
+      <h2>Utah Web Cams</h2>
     </Fragment>
   );
 }
@@ -190,19 +168,3 @@ WeatherCamContainer.propTypes = {
 };
 
 export default withStyles(styles)(WeatherCamContainer);
-
-
-{/*{tileData.map(tile => (
-  <GridListTile key={tile.img}>
-    <img src={tile.img} alt={tile.title} />
-    <GridListTileBar
-      title={tile.title}
-      subtitle={<span>by: {tile.author}</span>}
-      actionIcon={
-        <IconButton className={classes.icon}>
-          <InfoIcon />
-        </IconButton>
-      }
-    />
-  </GridListTile>
-))}*/}
