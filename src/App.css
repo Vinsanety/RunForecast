@@ -14,6 +14,9 @@
 h1 {
   color: #2196F3;
 }
+h2 {
+  color: #42a5f5;
+}
 
 /* NAV BAR */
 .navbar {
@@ -131,37 +134,28 @@ h1 {
 
 /* CARD */
 .weather-card {
-  padding: 1rem 3rem 3rem 3rem;
-  min-height: 20vh;
-  margin-bottom: 5rem;
-
-  background-color: #2196F3 !important;
-  color: #FFF;
-  width: 50%;
   width: 60%;
+  min-height: 15vh;
   margin: 0 auto;
+  padding: 1rem 3rem 3rem 3rem;
+  color: #FFF;
+  background-color: #2196F3 !important;
+  box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.2), 0px 4px 4px 0px rgba(0,0,0,0.14), 0px 6px 4px -4px rgba(0,0,0,0.12) !important;
 }
 @media only screen and (max-width: 768px) {
-  /* .weather-card h1 {
-    display: none;
-  } */
   .weather-card {
-    /* padding: 0; */
-
-    width: 100%;
+    width: auto;
     padding: 0.5rem;
   }
 }
 .weather-card p {
-  /* padding: 1.5rem; */
   text-align: center;
   margin: 0;
   font-size: 1.5rem;
-  /* border-bottom: 2px solid #2196F3; */
 }
 .weather-card .weather-card-location {
   font-size: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .weather-card .weather-card-data {
   font-size: 3rem;
@@ -175,22 +169,20 @@ h1 {
   }
   .weather-card .weather-card-location {
     font-size: 2rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.25rem;
   }
   .weather-card .weather-card-data {
     font-size: 2rem;
   }
   .weather-card .weather-card-meta-data {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
 }
 .weather-card .weather-category {
-  /* color: #2196F3; */
   color: #eeeeee;
-  /* font-size: 1.25rem; */
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 700;
-  margin-right: 0.75rem;
+  margin-right: 0.5rem;
 }
 .weather-card .measurement-unit {
   font-size: 0.9rem;
@@ -201,12 +193,15 @@ h1 {
   margin-bottom: -1rem;
 }
 .weather-card .weather-card-error {
-  margin-top: 3rem;
+  margin-top: 1rem;
   font-size: 1.5rem;
 }
 @media only screen and (max-width: 768px) {
   .weather-card .weather-card-error {
     margin-top: 0;
+  }
+  .weather-card .weather-category {
+    font-size: 0.8rem;
   }
 }
 .weather-card .city-weather-form-helper-text {
@@ -214,14 +209,12 @@ h1 {
   padding-top: 0;
 }
 .weather-card .weather-card-error, .weather-card .city-weather-form-helper-text {
-  /* color: #3F51B5; */
   color: #FFF;
   text-align: center;
   border-bottom: none;
 }
 .sunrise-icon, .sunset-icon {
   font-size: 1.25rem !important;
-  /* margin-bottom: -0.5rem; */
 }
 .weather-card .sunrise-icon {
   color: #ffa700;

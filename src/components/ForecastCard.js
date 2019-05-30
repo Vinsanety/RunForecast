@@ -8,7 +8,7 @@ class ForecastCard extends React.Component {
     return (
       <div className="forecast-card-container">
         { this.props.city &&
-          <h1>{ this.props.city } Forecast (5day/3hour)</h1>
+          <h2>{ this.props.city } Forecast <span style={{ fontSize:"0.9rem" }}>(5day/3hour)</span></h2>
         }
         <Grid container spacing={16}>
         {cardForecastData.map((forecastData, index) =>

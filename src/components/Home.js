@@ -6,7 +6,7 @@ class Home extends React.Component {
   render () {
     return (
       <div className="app-grid home-container">
-        <Grid container style={{ padding: '2rem' }}>
+        <Grid container style={{ padding: '1rem 2rem' }}>
           <Grid item xs={12}>
             <CitySearchWeatherContainer />
           </Grid>
