@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import CityWeatherForm from './CityWeatherForm.js';
 import WeatherCard from './WeatherCard.js';
-import ForecastCard from './ForecastCard.js';
+import ForecastTable from './ForecastTable.js';
 
 const API_KEY = "56e336360da929bb96ec1b44103e92aa";
 
@@ -95,7 +95,7 @@ class CitySearchWeatherContainer extends React.Component {
           error={this.state.error}
           formHint={this.state.formHint}
         />
-        <ForecastCard
+        <ForecastTable
           city={this.state.city}
           forecast={this.state.forecast}
         />

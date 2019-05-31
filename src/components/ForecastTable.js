@@ -21,7 +21,7 @@ class ForecastCard extends React.Component {
                 <TableRow>
                   <TableCell>Time</TableCell>
                   <TableCell>Temp</TableCell>
-                  <TableCell>Humidity</TableCell>
+                  <TableCell className="forecast-table-header-humidity">Humidity</TableCell>
                   <TableCell>Wind</TableCell>
                 </TableRow>
               </TableHead>
