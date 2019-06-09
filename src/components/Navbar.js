@@ -13,9 +13,9 @@ class Navbar extends React.Component {
           <a className="api-docs-link" href="https://openweathermap.org/" target="_blank" title="Visit API Docs" rel="noopener noreferrer">
             <Icon>wb_sunny</Icon>
           </a>
-          <Link className="navbar-link home-link" to="/">
+          <a className="navbar-link home-link" href="/">
               Run Forecast
-          </Link>
+          </a>
           <Link className="navbar-link" to="/weathercam">Weathercams</Link>
         </Toolbar>
       </AppBar>
