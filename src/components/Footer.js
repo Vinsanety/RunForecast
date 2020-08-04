@@ -5,7 +5,7 @@ class Footer extends React.Component {
     return (
       <footer className="footer-container">
         <div className="footer-copyright">
-          <span>&copy;2019 Vahala Designs</span>
+          <span>&copy;2020 Vahala Designs</span>
         </div>
         <div className="footer-link">
           <a href="https://vincevahala.com" target="_blank" rel="noopener noreferrer">Vahala Web Design</a>

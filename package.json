@@ -3,19 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^3.9.3",
+    "@material-ui/core": "^3.9.4",
     "@material-ui/icons": "^3.0.2",
     "babel": "^6.23.0",
-    "babel-eslint": "^10.0.1",
-    "eslint-utils": "^1.4.2",
-    "lodash": "^4.17.14",
+    "eslint-utils": "^1.4.3",
+    "lodash": "^4.17.19",
     "lodash.template": "^4.5.0",
     "mixin-deep": "^2.0.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.0",
-    "set-value": "^3.0.1"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.1",
+    "set-value": "^3.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
