@@ -58,7 +58,10 @@ class LocalWeatherContainer extends React.Component {
               <img className="weather-icon" src={"https://openweathermap.org/img/w/" + this.state.icon + ".png"} alt="Weather icon">
               </img>
             }
-          <CapitalizeFirstLetter text={this.state.description} />
+            {
+              this.state.description &&
+              <CapitalizeFirstLetter text={this.state.description} />
+            }
         </div>
         <div>
           <span className="local-weather-category">Humidity</span>
