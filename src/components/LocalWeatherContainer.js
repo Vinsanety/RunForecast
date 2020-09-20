@@ -22,7 +22,7 @@ class LocalWeatherContainer extends React.Component {
     const location_data = await location_call.json();
     const city = location_data.city;
     // Get Weather with location data
-    const dataRes = await fetch(`https://thingproxy.freeboard.io/fetch/https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=imperial`);
+    const dataRes = await fetch(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=imperial`);
     const weather_data = await dataRes.json();
     if (weather_data.name) {
       this.setState({
