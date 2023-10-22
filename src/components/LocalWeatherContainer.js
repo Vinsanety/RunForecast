@@ -2,7 +2,7 @@ import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import CapitalizeFirstLetter from '../UtilComponents/CapitalizeFirstLetter.js';
 
-const API_KEY = "56e336360da929bb96ec1b44103e92aa";
+const API_KEY = `${process.env.REACT_APP_API_KEY}`;
 const Location =  "https://extreme-ip-lookup.com/json/";
 
 class LocalWeatherContainer extends React.Component {
@@ -22,11 +22,7 @@ class LocalWeatherContainer extends React.Component {
     const location_data = await location_call.json();
     const city = await location_data.city;
     // Get Weather with location data
-    const dataRes = await fetch(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=imperial`, {
-      headers: {
-        'Access-Control-Allow-Origin':'*'
-      }
-    });
+    const dataRes = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=imperial`);
     const weather_data = await dataRes.json();
     if (weather_data.name) {
       this.setState({

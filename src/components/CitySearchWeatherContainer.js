@@ -3,7 +3,7 @@ import CityWeatherForm from './CityWeatherForm.js';
 import WeatherCard from './WeatherCard.js';
 import ForecastTable from './ForecastTable.js';
 
-const API_KEY = "56e336360da929bb96ec1b44103e92aa";
+const API_KEY = `${process.env.REACT_APP_API_KEY}`;
 
 class CitySearchWeatherContainer extends React.Component {
   state = {
@@ -24,11 +24,11 @@ class CitySearchWeatherContainer extends React.Component {
     e.preventDefault();
     const city = e.target.elements.city.value;
     // Current Weather API Call
-    const current_weather_api_call = await fetch(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=imperial`);
+    const current_weather_api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=imperial`);
     const current_weather_data = await current_weather_api_call.json();
     console.log(current_weather_data);
     // Forecast Weather API Call
-    const forecast_api_call = await fetch(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=imperial`);
+    const forecast_api_call = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=imperial`);
     const forecast_data = await forecast_api_call.json();
     console.log(forecast_data.list);
 
