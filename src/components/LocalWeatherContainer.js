@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Paper from '@material-ui/core/Paper';
 import CapitalizeFirstLetter from '../UtilComponents/CapitalizeFirstLetter.js';
 
@@ -49,33 +49,37 @@ class LocalWeatherContainer extends React.Component {
 
   render () {
     return (
-      <Paper className="local-weather-ticker">
-        <span className="local-weather-ticker-header">{this.state.city} local weather</span>
-        <div>
-          <span className="local-weather-category">Conditions</span>
-          {this.state.temperature}&deg;F
-            { this.state.icon &&
-              <img className="weather-icon" src={"https://openweathermap.org/img/w/" + this.state.icon + ".png"} alt="Weather icon">
-              </img>
-            }
-            {
-              this.state.description &&
-              <CapitalizeFirstLetter text={this.state.description} />
-            }
-        </div>
-        <div>
-          <span className="local-weather-category">Humidity</span>
-          {this.state.humidity}%
-        </div>
-        <div>
-          <span className="local-weather-category">Wind</span>
-          {this.state.windSpeed}mph
-        </div>
-        <div>
-          <span className="local-weather-category">Cloud</span>
-          {this.state.cloud}%
-        </div>
-      </Paper>
+      <Fragment>
+        {this.state.city &&
+          <Paper className="local-weather-ticker">
+            <span className="local-weather-ticker-header">{this.state.city} local weather</span>
+            <div>
+              <span className="local-weather-category">Conditions</span>
+              {this.state.temperature}&deg;F
+                { this.state.icon &&
+                  <img className="weather-icon" src={"https://openweathermap.org/img/w/" + this.state.icon + ".png"} alt="Weather icon">
+                  </img>
+                }
+                {
+                  this.state.description &&
+                  <CapitalizeFirstLetter text={this.state.description} />
+                }
+            </div>
+            <div>
+              <span className="local-weather-category">Humidity</span>
+              {this.state.humidity}%
+            </div>
+            <div>
+              <span className="local-weather-category">Wind</span>
+              {this.state.windSpeed}mph
+            </div>
+            <div>
+              <span className="local-weather-category">Cloud</span>
+              {this.state.cloud}%
+            </div>
+          </Paper>
+        }
+      </Fragment>
     )
   }
 }
