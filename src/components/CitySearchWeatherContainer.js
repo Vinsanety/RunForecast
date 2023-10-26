@@ -26,7 +26,6 @@ class CitySearchWeatherContainer extends React.Component {
     // Current Weather API Call
     const current_weather_api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=imperial`);
     const current_weather_data = await current_weather_api_call.json();
-    console.log(current_weather_data);
     // Forecast Weather API Call
     const forecast_api_call = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=imperial`);
     const forecast_data = await forecast_api_call.json();

@@ -9,8 +9,9 @@ class WeatherCard extends React.Component {
     return (
       <div className="weather-card-container">
       <Card className="weather-card">
-        <Grid container>
-          <Grid item xs={6}>
+        { !this.props.formHint &&
+        <Grid container alignItems="center">
+          <Grid item xs={12} sm={6}>
             { this.props.city &&
               <p className="weather-card-location">
                 { this.props.city }
@@ -31,7 +32,7 @@ class WeatherCard extends React.Component {
               </p>
             }
           </Grid>
-          <Grid item xs={6} className="weather-card-meta-data">
+          <Grid item xs={12} sm={6} className="weather-card-meta-data">
             { this.props.humidity &&
               <p>
                 <span className="weather-category">Humidity:</span> { this.props.humidity }<span className="measurement-unit">%</span>
@@ -42,7 +43,7 @@ class WeatherCard extends React.Component {
                 <span className="weather-category">Wind Speed:</span> { this.props.windSpeed }<span className="measurement-unit">mph</span>
               </p>
             }
-            { this.props.cloud &&
+            { this.props.city &&
               <p>
                 <span className="weather-category">Cloudiness:</span> { this.props.cloud }<span className="measurement-unit">%</span>
               </p>
@@ -59,6 +60,7 @@ class WeatherCard extends React.Component {
             }
             </Grid>
           </Grid>
+        }
           { this.props.error &&
             <p className="weather-card-error">
               { this.props.error }

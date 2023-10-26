@@ -19,13 +19,12 @@ function LocalWeatherContainer() {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     setLocation({ latitude, longitude });
-    console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+    // console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
     // Make API call to OpenWeatherMap
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=imperial`)
       .then(response => response.json())
       .then(data => {
         setApiResonse(data);
-        console.log(data);
       })
     .catch(error => console.log(error));
   }

@@ -6,7 +6,7 @@
 .app-grid {
 
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .app-grid {
     padding: 0 10rem;
   }
@@ -100,37 +100,55 @@ h2 {
 
 /* CITY WEATHER INPUT */
 .city-weather-form {
-  margin: 1rem 0 2rem 0;
+  margin: 3rem 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 .city-weather-form-container {
   text-align: center;
 }
 .city-weather-form .city-weather-form-input {
   width: 50%;
-  margin-right: 1rem;
   color: #424242;
   font-size: 1.5rem;
 }
-[class*="MuiInput-underline-"]:after {
-  border-bottom: 2px solid #2196F3 !important;
+[class*="MuiFormLabel-root-"][class*="MuiFormLabel-focused-"] {
+  color: #1565c0 !important;
+}
+.MuiOutlinedInput-root-169.MuiOutlinedInput-focused-170 .MuiOutlinedInput-notchedOutline-176 {
+  border-color: #1565c0 !important;
+}
+@media only screen and (max-width: 600px) {
+  .city-weather-form .city-weather-form-input {
+    width: 100%;
+  }
 }
 .city-weather-form-btn {
   min-width: 100px;
   max-width: 300px;
-  height: 35px;
   background-color: #2196F3;
-  border: none;
-  border-radius: 3px;
-  font-variant: small-caps;
+  border: 1px solid #2196F3;
+  border-radius: 0.25rem;
+  padding: 0.875rem 1.5rem;
+  text-transform: uppercase;
   font-size: 1.25rem;
+  font-weight: 600;
   color: #FFF;
   cursor: pointer;
 }
-.city-weather-form-btn:hover, .city-weather-form-btn:active {
+.city-weather-form-btn:hover {
   transition: 0.15s;
   color: #2196F3;
   background-color: #FFF;
   border: 1px solid #2196F3;
+}
+.city-weather-form-btn:active {
+  background-color: #1565c0;
+  color: #FFF;
+  border: 1px solid #1565c0;
 }
 
 /* CARD */
@@ -138,15 +156,15 @@ h2 {
   width: 60%;
   min-height: 15vh;
   margin: 0 auto;
-  padding: 1rem 3rem 3rem 3rem;
+  padding: 2rem;
   color: #FFF;
-  background-color: #2196F3 !important;
+  background-color: #42a5f5 !important;
   box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.2), 0px 4px 4px 0px rgba(0,0,0,0.14), 0px 6px 4px -4px rgba(0,0,0,0.12) !important;
 }
 @media only screen and (max-width: 768px) {
   .weather-card {
     width: auto;
-    padding: 0.5rem;
+    padding: 1rem;
   }
 }
 .weather-card p {
@@ -162,7 +180,6 @@ h2 {
   font-size: 3rem;
 }
 .weather-card .weather-card-meta-data {
-  margin-top: 1.5rem;
 }
 @media only screen and (max-width: 768px) {
   .weather-card p {
@@ -176,7 +193,7 @@ h2 {
     font-size: 2rem;
   }
   .weather-card .weather-card-meta-data {
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
   }
 }
 .weather-card .weather-category {
