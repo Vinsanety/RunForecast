@@ -68,7 +68,7 @@ class CitySearchWeatherContainer extends React.Component {
         cloud: undefined,
         sunrise: undefined,
         sunset: undefined,
-        formHint: "If searching City and State, use a comma with full state name (example: Denver, Colorado)",
+        formHint: "(example: Boulder, Colorado)",
         error: "Please enter a valid City",
         forecast: [],
       });

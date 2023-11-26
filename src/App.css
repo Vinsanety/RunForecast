@@ -152,7 +152,7 @@ h2 {
 }
 
 /* CARD */
-.weather-card {
+.weather-card.MuiPaper-root {
   width: 60%;
   min-height: 15vh;
   margin: 0 auto;
@@ -164,7 +164,7 @@ h2 {
 @media only screen and (max-width: 768px) {
   .weather-card {
     width: auto;
-    padding: 1rem;
+    /* padding: 1.5rem; */
   }
 }
 .weather-card p {
@@ -223,6 +223,7 @@ h2 {
   }
 }
 .weather-card .city-weather-form-helper-text {
+  margin-top: 0.5rem;
   font-size: 0.9rem;
   padding-top: 0;
 }
@@ -341,7 +342,7 @@ h2 {
     text-align: center;
   }
   .footer-container {
-    padding: 0;
+    padding: 1rem 0;
   }
   .footer-link a {
     padding: 0;
