@@ -1,17 +1,23 @@
-import React from 'react';
+import React from "react";
 
 class Footer extends React.Component {
-  render () {
+  render() {
     return (
       <footer className="footer-container">
         <div className="footer-copyright">
-          <span>&copy; {(new Date().getFullYear())} Vahala Designs</span>
+          <span>&copy; {new Date().getFullYear()} Vahala Designs</span>
         </div>
         <div className="footer-link">
-          <a href="https://vincevahala.com" target="_blank" rel="noopener noreferrer">Vahala Web Design</a>
+          <a
+            href="https://vincevahala.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Vahala Web Design
+          </a>
         </div>
       </footer>
-    )
+    );
   }
 }
 

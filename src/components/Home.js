@@ -1,18 +1,18 @@
-import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import CitySearchWeatherContainer from './CitySearchWeatherContainer.js';
+import React from "react";
+import Grid from "@material-ui/core/Grid";
+import CitySearchWeatherContainer from "./CitySearchWeatherContainer.js";
 
 class Home extends React.Component {
-  render () {
+  render() {
     return (
       <div className="app-grid home-container">
-        <Grid container style={{ padding: '1rem 2rem' }}>
+        <Grid container>
           <Grid item xs={12}>
             <CitySearchWeatherContainer />
           </Grid>
         </Grid>
       </div>
-    )
+    );
   }
 }
 

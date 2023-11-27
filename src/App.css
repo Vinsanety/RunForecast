@@ -1,15 +1,18 @@
 .App {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   min-height: 100vh;
   position: relative;
 }
+.app-grid {
+  padding: 1rem 2rem;
+}
 @media only screen and (min-width: 1024px) {
   .app-grid {
-    padding: 0 10rem;
+    padding: 5rem 10rem;
   }
 }
 h1 {
-  color: #2196F3;
+  color: #2196f3;
 }
 h2 {
   color: #42a5f5;
@@ -21,16 +24,16 @@ h2 {
   padding: 0;
 }
 .navbar .app-bar {
-  background-color: #2196F3 !important;
+  background-color: #2196f3 !important;
 }
 .navbar .app-bar a {
   font-size: 1.125rem;
   text-decoration: none;
-  color: #FFF;
+  color: #fff;
 }
 .api-docs-link span.MuiIcon-root {
   font-size: 2rem;
-  color: #FFEB3B;
+  color: #ffeb3b;
   padding: 1.25rem 1.625rem 1.25rem 1.25rem;
   width: 1.5625rem;
   height: 1.5625rem;
@@ -44,7 +47,7 @@ h2 {
 }
 .navbar-link {
   text-decoration: none;
-  color: #FFF;
+  color: #fff;
   padding: 1.5rem;
 }
 .navbar-link:hover {
@@ -63,7 +66,7 @@ h2 {
   border-radius: 0 !important;
 }
 .local-weather-ticker-header {
-  color: #2196F3;
+  color: #2196f3;
   font-size: 1.5rem;
   padding-right: 1.75rem;
 }
@@ -72,7 +75,7 @@ h2 {
   padding-right: 1.25rem;
 }
 .local-weather-category {
-  color: #2196F3;
+  color: #2196f3;
   padding-right: 0.5rem;
 }
 .local-weather-ticker > div > img {
@@ -117,7 +120,8 @@ h2 {
 [class*="MuiFormLabel-root-"][class*="MuiFormLabel-focused-"] {
   color: #1565c0 !important;
 }
-.MuiOutlinedInput-root-169.MuiOutlinedInput-focused-170 .MuiOutlinedInput-notchedOutline-176 {
+.MuiOutlinedInput-root-169.MuiOutlinedInput-focused-170
+  .MuiOutlinedInput-notchedOutline-176 {
   border-color: #1565c0 !important;
 }
 @media only screen and (max-width: 600px) {
@@ -128,25 +132,25 @@ h2 {
 .city-weather-form-btn {
   min-width: 100px;
   max-width: 300px;
-  background-color: #2196F3;
-  border: 1px solid #2196F3;
+  background-color: #2196f3;
+  border: 1px solid #2196f3;
   border-radius: 0.25rem;
   padding: 0.875rem 1.5rem;
   text-transform: uppercase;
   font-size: 1.25rem;
   font-weight: 600;
-  color: #FFF;
+  color: #fff;
   cursor: pointer;
 }
 .city-weather-form-btn:hover {
   transition: 0.15s;
-  color: #2196F3;
-  background-color: #FFF;
-  border: 1px solid #2196F3;
+  color: #2196f3;
+  background-color: #fff;
+  border: 1px solid #2196f3;
 }
 .city-weather-form-btn:active {
   background-color: #1565c0;
-  color: #FFF;
+  color: #fff;
   border: 1px solid #1565c0;
 }
 
@@ -154,16 +158,16 @@ h2 {
 .weather-card.MuiPaper-root {
   width: 60%;
   min-height: 15vh;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   padding: 2rem;
-  color: #FFF;
+  color: #fff;
   background-color: #42a5f5 !important;
-  box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.2), 0px 4px 4px 0px rgba(0,0,0,0.14), 0px 6px 4px -4px rgba(0,0,0,0.12) !important;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.2),
+    0px 4px 4px 0px rgba(0, 0, 0, 0.14), 0px 6px 4px -4px rgba(0, 0, 0, 0.12) !important;
 }
 @media only screen and (max-width: 768px) {
-  .weather-card {
+  .weather-card.MuiPaper-root {
     width: auto;
-    /* padding: 1.5rem; */
   }
 }
 .weather-card p {
@@ -226,12 +230,14 @@ h2 {
   font-size: 0.9rem;
   padding-top: 0;
 }
-.weather-card .weather-card-error, .weather-card .city-weather-form-helper-text {
-  color: #FFF;
+.weather-card .weather-card-error,
+.weather-card .city-weather-form-helper-text {
+  color: #fff;
   text-align: center;
   border-bottom: none;
 }
-.sunrise-icon, .sunset-icon {
+.sunrise-icon,
+.sunset-icon {
   font-size: 1.25rem !important;
 }
 .weather-card .sunrise-icon {
@@ -241,7 +247,8 @@ h2 {
   color: #fd5e53;
 }
 @media only screen and (max-width: 768px) {
-  .weather-card .sunrise-icon, .weather-card .sunset-icon {
+  .weather-card .sunrise-icon,
+  .weather-card .sunset-icon {
     font-size: 1rem !important;
     margin: 0;
   }
@@ -256,7 +263,7 @@ h2 {
 }
 .forecast-table {
   width: 100%;
-  min-width: 700px !important,
+  min-width: 700px !important;
 }
 .forecast-table-header th {
   text-align: left;
@@ -317,12 +324,12 @@ h2 {
   left: 0;
   font-size: 1rem;
   padding: 1.5rem 3rem;
-  color: #FFF;
-  background-color: #2196F3;
+  color: #fff;
+  background-color: #2196f3;
 }
 .footer-link a {
   text-decoration: none;
-  color: #FFF;
+  color: #fff;
   padding: 1.5rem 1rem;
 }
 .footer-link a:hover {

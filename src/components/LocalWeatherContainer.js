@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import Paper from '@material-ui/core/Paper';
-import CapitalizeFirstLetter from '../UtilComponents/CapitalizeFirstLetter.js';
+import React, { useState } from "react";
+import Paper from "@material-ui/core/Paper";
+import CapitalizeFirstLetter from "../UtilComponents/CapitalizeFirstLetter.js";
 
 const API_KEY = `${process.env.REACT_APP_API_KEY}`;
 
@@ -21,12 +21,14 @@ function LocalWeatherContainer() {
     setLocation({ latitude, longitude });
     // console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
     // Make API call to OpenWeatherMap
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=imperial`)
-      .then(response => response.json())
-      .then(data => {
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=imperial`
+    )
+      .then((response) => response.json())
+      .then((data) => {
         setApiResonse(data);
       })
-    .catch(error => console.log(error));
+      .catch((error) => console.log(error));
   }
   function error() {
     console.log("Unable to retrieve your location");
@@ -37,18 +39,28 @@ function LocalWeatherContainer() {
     <div>
       {apiResponse ? (
         <Paper className="local-weather-ticker">
-          <span className="local-weather-ticker-header">{apiResponse.name} local weather</span>
+          <span className="local-weather-ticker-header">
+            {apiResponse.name} local weather
+          </span>
           <div>
             <span className="local-weather-category">Conditions</span>
             {Math.round(apiResponse.main.temp)}&deg;F
-              { apiResponse.weather[0].icon &&
-                <img className="weather-icon" src={"https://openweathermap.org/img/w/" + apiResponse.weather[0].icon + ".png"} alt="Weather icon">
-                </img>
-              }
-              {
-                apiResponse.weather[0].description &&
-                <CapitalizeFirstLetter text={apiResponse.weather[0].description} />
-              }
+            {apiResponse.weather[0].icon && (
+              <img
+                className="weather-icon"
+                src={
+                  "https://openweathermap.org/img/w/" +
+                  apiResponse.weather[0].icon +
+                  ".png"
+                }
+                alt="Weather icon"
+              ></img>
+            )}
+            {apiResponse.weather[0].description && (
+              <CapitalizeFirstLetter
+                text={apiResponse.weather[0].description}
+              />
+            )}
           </div>
           <div>
             <span className="local-weather-category">Humidity</span>
