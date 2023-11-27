@@ -6,6 +6,9 @@
 .app-grid {
   padding: 1rem 2rem;
 }
+.app-grid h1 {
+  text-align: center;
+}
 @media only screen and (min-width: 1024px) {
   .app-grid {
     padding: 5rem 10rem;

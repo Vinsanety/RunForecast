@@ -5,9 +5,10 @@ import CitySearchWeatherContainer from "./CitySearchWeatherContainer.js";
 class Home extends React.Component {
   render() {
     return (
-      <div className="app-grid home-container">
+      <div className="app-grid">
         <Grid container>
           <Grid item xs={12}>
+            <h1>City weather search</h1>
             <CitySearchWeatherContainer />
           </Grid>
         </Grid>

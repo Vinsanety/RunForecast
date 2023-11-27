@@ -7,7 +7,6 @@ class CityWeatherForm extends React.Component {
     return (
       <Grid container className="city-weather-form-container">
         <Grid item xs={12}>
-          <h1>City weather search</h1>
           <form
             className="city-weather-form"
             onSubmit={this.props.getCityWeather}

@@ -28,7 +28,7 @@ const styles = (theme) => ({
 function WeatherCamContainer(props) {
   const { classes } = props;
   return (
-    <Fragment>
+    <div class="weather-cam-container">
       <h2>Colorado Web Cams</h2>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
@@ -58,7 +58,6 @@ function WeatherCamContainer(props) {
             </CardContent>
           </Card>
         </Grid>
-
         <Grid item xs={12} md={6}>
           <Card className={classes.card}>
             <CardHeader
@@ -85,7 +84,7 @@ function WeatherCamContainer(props) {
           </Card>
         </Grid>
       </Grid>
-    </Fragment>
+    </div>
   );
 }
 
