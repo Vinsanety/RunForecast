@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
@@ -28,7 +28,7 @@ const styles = (theme) => ({
 function WeatherCamContainer(props) {
   const { classes } = props;
   return (
-    <div class="weather-cam-container">
+    <div className="weather-cam-container">
       <h2>Colorado Web Cams</h2>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
